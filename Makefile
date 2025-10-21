@@ -16,7 +16,7 @@ NFS4 = /srv/nfs4/loveapple
 INSTALL_DIR = $(NFS4)/lib
 
 .PHONY: all clean
-all: $(LIB)
+all: $(OUTDIR)	$(LIB)
 
 $(OUTDIR):
 	mkdir -p $(OUTDIR)

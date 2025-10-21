@@ -63,7 +63,7 @@ bool draw_close(){
 
 void draw_point(u16 x, u16 y, u32 color){
     if (!initialized) return;
-    if (x>=width || x<0 || y>=height || y<0) return;
+    if (x>=width || y>=height) return;
     fb_ptr[y*width + x]=color;
     return;
 }
