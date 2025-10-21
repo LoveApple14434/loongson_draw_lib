@@ -1,7 +1,6 @@
 #ifndef __DRAW_H
 #define __DRAW_H
 
-#include <atomic>
 #include <cstdint>
 
 typedef uint8_t u8;

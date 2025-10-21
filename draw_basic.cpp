@@ -1,14 +1,17 @@
-#include "draw.h"
+#include "draw.hpp"
 #include <linux/fb.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/mman.h>
 #include <unistd.h>
 
-static int fb_fd;
-static u32 * fb_ptr;
-static int width, height;
-static bool initialized= false;
+namespace {
+    // 匿名命名空间，效果类似 static
+    int fb_fd = -1;
+    u32 * fb_ptr = nullptr;
+    u16 width = 0, height = 0;
+    bool initialized = false;
+}
 
 using vinfo= fb_var_screeninfo;
 using finfo= fb_fix_screeninfo;
@@ -34,6 +37,7 @@ int fb_close(){
 }
 
 void draw_point(u16 x, u16 y, u32 color){
+    if (!initialized) return;
     if (x>=width || x<0 || y>=height || y<0) return;
     fb_ptr[y*width + x]=color;
     return;
