@@ -36,6 +36,31 @@ int fb_close(){
     return 0;
 }
 
+bool draw_init(){
+    if (initialized) {
+        return true;
+    }
+    int res= fb_init();
+    if (res==0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool draw_close(){
+    if (!initialized) {
+        return false;
+    }
+    int res= fb_close();
+    if (res==0) {
+        initialized= false;
+        return true;
+    } else {
+        return false;
+    }
+}
+
 void draw_point(u16 x, u16 y, u32 color){
     if (!initialized) return;
     if (x>=width || x<0 || y>=height || y<0) return;
