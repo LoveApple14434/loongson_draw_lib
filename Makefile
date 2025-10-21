@@ -3,7 +3,7 @@ CC = $(CROSS_PREFIX)gcc
 AR = $(CROSS_PREFIX)ar
 CXX = $(CROSS_PREFIX)g++
 SRCS = draw_basic.cpp draw_higher.cpp
-HDRS = draw.h
+HDRS = draw.hpp
 OUTDIR = build
 
 CXXFLAGS = -O2 -fPIC -I.
@@ -15,7 +15,8 @@ LIB = $(OUTDIR)/libdraw.a
 NFS4 = /srv/nfs4/loveapple
 INSTALL_DIR = $(NFS4)/lib
 
-.PHONY: all clean
+.PHONY: all clean install
+
 all: $(OUTDIR)	$(LIB)
 
 $(OUTDIR):
