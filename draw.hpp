@@ -12,6 +12,7 @@ bool draw_close();
 u16 get_xres();
 u16 get_yres();
 
+void clear_screen(u32 color);
 void draw_point(u16 x, u16 y, u32 color);
 void draw_line(u16 x1, u16 y1, u16 x2, u16 y2, u32 color);
 void draw_block(u16 x1, u16 y1, u16 x2, u16 y2, u32 color);
