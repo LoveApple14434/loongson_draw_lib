@@ -1,6 +1,7 @@
 #include "draw.hpp"
 
-extern int width, height;
+int width = get_xres();
+int height = get_yres();
 
 void draw_line(u16 x1, u16 y1, u16 x2, u16 y2, u32 color){
     if (x1==x2) {
