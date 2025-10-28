@@ -2,7 +2,7 @@ CROSS_PREFIX = loongarch64-linux-gnu-
 CC = $(CROSS_PREFIX)gcc
 AR = $(CROSS_PREFIX)ar
 CXX = $(CROSS_PREFIX)g++
-SRCS = draw_basic.cpp draw_higher.cpp
+SRCS = draw_basic.cpp draw_higher.cpp draw_bmp.cpp
 HDRS = draw.hpp
 OUTDIR = build
 
