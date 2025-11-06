@@ -8,4 +8,6 @@
 
 命令：
 - 创建输出文件夹：`make build`
-- 编译：` `
+- 编译：`make`
+- 安装：`make install`
+- 清理输出：`make clean`
